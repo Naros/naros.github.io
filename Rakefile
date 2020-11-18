@@ -9,3 +9,12 @@ task :build do
   exit 0
 end
 
+# Print a message to STDOUT
+def msg(text, level = :info)
+  case level
+  when :warn
+    puts "\e[31m#{text}\e[0m"
+  else
+    puts "\e[33m#{text}\e[0m"
+  end
+end
